@@ -3,10 +3,16 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      @flats = Flat.where("name LIKE ?","%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
   end
 
+
   def show
+    @url = "https://maps.googleapis.com/maps/api/staticmap?center=#{@flat.address}&amp;zoom=13&amp;scale=2&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:red%7C10 Clifton Gardens London W9 1DT&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY"
   end
 
   def new
