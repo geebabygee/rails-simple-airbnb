@@ -1,0 +1,23 @@
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <h1><%=@flat.name%></h1>
+        <p class="flat-show-address"><%= @flat.address %></p>
+      </div>
+      <div class="flat-show-card">
+        <h3>A bit more about this flat...</h3>
+        <p><%=@flat.description %></p>
+        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=10 Clifton Gardens London W9 1DT&amp;zoom=13&amp;scale=2&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:red%7C10 Clifton Gardens London W9 1DT&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h5>Book this place!</h5>
+      </div>
+
+    </div>
+  </div>
+</div>

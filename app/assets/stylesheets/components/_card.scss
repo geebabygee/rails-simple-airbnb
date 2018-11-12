@@ -1,15 +1,10 @@
 .flat-card {
-    flex: 1 1 auto;
     width: 100%;
     position: relative;
-    margin: 30px;
+    margin: .5rem 0 1rem 0;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-    h4 {
-      font-size: 20px;
-    }
-
 }
 
 .flat-card-image {
@@ -19,6 +14,23 @@
 }
 
 .flat-card-content {
-    padding: 15px;
+    padding: 24px;
     background-color: #F8F9FA;
+}
+.flat-card-actions {
+    position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.flex {
+  display: flex;
 }
