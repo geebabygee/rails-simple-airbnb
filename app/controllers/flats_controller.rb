@@ -4,7 +4,7 @@ class FlatsController < ApplicationController
 
   def index
     if params[:query].present?
-      @flats = Flat.where("name LIKE ?","%#{params[:query]}%")
+      @flats = Flat.where("name LIKE '%#{params[:query]}%'")
     else
       @flats = Flat.all
     end
@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
 
 
   def show
-    @url = "https://maps.googleapis.com/maps/api/staticmap?center=#{@flat.address}&amp;zoom=13&amp;scale=2&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:red%7C10 Clifton Gardens London W9 1DT&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY"
+    @url = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.337798,37.810550,9.67,0.00,0.00/1000x600@2x?access_token=pk.eyJ1IjoiZ2VlYmFieWdlZSIsImEiOiJjanJxbnhzM3YwMmtwNDlxZzRsYzE4czEwIn0.c6_wGVPF4ps2oOp6_dqO9Q'
   end
 
   def new
@@ -42,12 +42,12 @@ class FlatsController < ApplicationController
   end
 
   private
-    def set_flat
-      @flat = Flat.find(params[:id])
-    end
+  def set_flat
+    @flat = Flat.find(params[:id])
+  end
 
-    def flat_params
-      params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests, :search)
-    end
+  def flat_params
+    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests, :search)
+  end
 
 end

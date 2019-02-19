@@ -4,18 +4,16 @@
       <h1>All our Flats</h1>
     </div>
   </div>
-
   <div class="row">
     <div class="col">
       <p>We found <%=@flats.length %> flats on our website.</p>
     </div>
   </div>
-
   <div class="row">
     <% @flats.each do |flat| %>
       <div class="col-xs-12 col-sm-4 ">
         <div class="flat-card">
-           <div class="flat-card-image" style="background-image: url('<%= flat.picture_url %>')"></div>
+          <div class="flat-card-image" style="background-image: url('<%= flat.picture_url %>')"></div>
           <div class="flat-card-content">
             <div class="flat-card-title">
               <h4><%= flat.description %></h4>
@@ -24,22 +22,21 @@
             <div class="flex">
               <div class="flex">
                 <span><i class="fa fa-users" aria-hidden="true">&nbsp<%= flat.number_of_guests %></i>&nbsp&nbsp&nbsp&nbsp<i class="fa fas-eur" aria-hidden="true"><%= flat.price_per_night %>&nbsp<i class="fa fa-credit-card" aria-hidden="true"></i>
-                </i></span>
+                  </i></span>
               </div>
               <div class="flex">
-
               </div>
             </div>
           </div>
           <div class="flat-card-actions">
-          <%= link_to "Show", flat_path(flat)%>
-          <%= link_to "Edit", edit_flat_path(flat)%>
+            <%= link_to "Show", flat_path(flat)%>
+            <%= link_to "Edit", edit_flat_path(flat)%>
             <%= link_to "Delete", flat_path(flat),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
           </div>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
